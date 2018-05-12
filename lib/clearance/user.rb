@@ -163,7 +163,7 @@ module Clearance
         validates :email,
           email: { strict_mode: true },
           presence: true,
-          uniqueness: { allow_blank: true },
+          uniqueness: { allow_blank: true, scope: :stand_id },
           unless: :email_optional?
 
         validates :password, presence: true, unless: :skip_password_validation?
